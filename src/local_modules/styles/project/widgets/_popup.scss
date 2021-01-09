@@ -289,6 +289,22 @@
 				}
 			}
 		}
+		.form-common {
+			.form-main {
+				flex-direction: column;
+				align-items: center;
+
+			}
+
+			.form-input label {
+				color: rgba($dark, 70);
+			}
+
+			.form-submit {
+				line-height: 75px;
+				width: 495px;
+			}
+		}
 	}
 	 
 }

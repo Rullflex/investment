@@ -339,6 +339,7 @@ class Form extends App {
         // this.option()
     }
 
+
     phoneMask() {
         $.each($(`input.phone`), (index, e) => {
             $(e.target).attr(`type`, `tel`)
