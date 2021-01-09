@@ -1,0 +1,97 @@
+- var postfixSm = '-sm'
+- var postfixMd = '-md'
+- var postfixLg = '-lg'
+- var postfixRetina = '@r'
+
+mixin picture-jpg(src, classList = '', alt = '', retina = true)
+    if retina
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.webp`, type="image/webp")
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.jpg`, type="image/jpg")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.webp 2x, ${src}${postfixLg}.webp 1x`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.jpg 2x, ${src}${postfixLg}.jpg 1x`, type="image/jpg")
+            img(src=ipl data-src=`${src}${postfixLg}.jpg` alt=alt class=`lazyload ${classList}`)
+    else
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.webp`, type="image/webp")
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.jpg`, type="image/jpg")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.webp`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.jpg`, type="image/jpg")
+            img(src=ipl data-src=`${src}${postfixLg}.jpg` alt=alt class=`lazyload ${classList}`)
+
+mixin picture-jpg-solo(src, classList = '', alt = '', retina = false)
+    if retina
+        picture
+            source(srcset=ipl data-srcset=`${src}${postfixRetina}.webp 2x, ${src}.webp 1x`, type="image/webp")
+            source(srcset=ipl data-srcset=`${src}${postfixRetina}.jpg 2x, ${src}.jpg 1x`, type="image/jpg")
+            img(src=ipl data-src=`${src}.jpg` alt=alt class=`lazyload ${classList}`)
+    else
+        picture
+            source(srcset=ipl data-srcset=`${src}.webp`, type="image/webp")
+            source(srcset=ipl data-srcset=`${src}.jpg`, type="image/jpg")
+            img(src=ipl data-src=`${src}.jpg` alt=alt class=`lazyload ${classList}`)
+
+mixin picture-jpg-lg(src, classList = '', alt = '', retina = true)
+    if retina
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=ipl)
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.webp 2x, ${src}${postfixLg}.webp 1x`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.jpg 2x, ${src}${postfixLg}.jpg 1x`, type="image/jpg")
+            img(src=ipl data-src=`${src}${postfixLg}.jpg` alt=alt class=`lazyload ${classList}`)
+    else
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=ipl)
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.webp`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.jpg`, type="image/jpg")
+            img(src=ipl data-src=`${src}${postfixLg}.jpg` alt=alt class=`lazyload ${classList}`)
+
+mixin picture-png(src, classList = '', alt = '', retina = true)
+    if retina
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.webp`, type="image/webp")
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.png`, type="image/png")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.webp 2x, ${src}${postfixLg}.webp 1x`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.png 2x, ${src}${postfixLg}.png 1x`, type="image/png")
+            img(src=ipl data-src=`${src}${postfixLg}.png` alt=alt class=`lazyload ${classList}`)
+    else
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.webp`, type="image/webp")
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=`${src}${postfixSm}.png`, type="image/png")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.webp`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.png`, type="image/png")
+            img(src=ipl data-src=`${src}${postfixLg}.png` alt=alt class=`lazyload ${classList}`)
+            
+mixin picture-png-solo(src, classList = '', alt = '', retina = false)
+    if retina
+        picture
+            source(srcset=ipl data-srcset=`${src}${postfixRetina}.webp 2x, ${src}.webp 1x`, type="image/webp")
+            source(srcset=ipl data-srcset=`${src}${postfixRetina}.png 2x, ${src}.png 1x`, type="image/png")
+            img(src=ipl data-src=`${src}.png` alt=alt class=`lazyload ${classList}`)
+    else
+        picture
+            source(srcset=ipl data-srcset=`${src}.webp`, type="image/webp")
+            source(srcset=ipl data-srcset=`${src}.png`, type="image/png")
+            img(src=ipl data-src=`${src}.png` alt=alt class=`lazyload ${classList}`)
+
+mixin picture-png-lg(src, classList = '', alt = '', retina = true)
+    if retina
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=ipl)
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.webp 2x, ${src}${postfixLg}.webp 1x`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}${postfixRetina}.png 2x, ${src}${postfixLg}.png 1x`, type="image/png")
+            img(src=ipl data-src=`${src}${postfixLg}.png` alt=alt class=`lazyload ${classList}`)
+    else
+        picture
+            source(media=`(max-width: ${lg - 1}px)`, srcset=ipl data-srcset=ipl)
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.webp`, type="image/webp")
+            source(media=`(min-width: ${lg}px)`, srcset=ipl data-srcset=`${src}${postfixLg}.png`, type="image/png")
+            img(src=ipl data-src=`${src}${postfixLg}.png` alt=alt class=`lazyload ${classList}`)
+
+//- Навигация слайдера
+
+mixin slider-dots()
+    ul.uk-slider-nav.uk-dotnav.slidedots
+
+mixin slider-nav()
+    a.slidenav.slidenav-prev(href="#" data-uk-slider-item="previous")!= iconset.angleleft
+    a.slidenav.slidenav-next(href="#" data-uk-slider-item="next")!= iconset.angleright

@@ -1,0 +1,58 @@
+footer.app-footer
+  .container
+    .app-footer__wrap
+      .logo
+        a(href=mainPageLink)
+          img.uk-img.img-logo.uk-logo(src=`${modulesIco}logo.svg` alt=companyName)
+        .cred 2020. Все права защищены.
+      ul.uk-nav
+        li
+          a(href=partnersLink) Партнёрам
+        li.d-none.d-lg-block
+          a(href="#") Доверительное управление
+        li.d-none.d-lg-block
+          a(href="#") Самостоятельное управление
+        li
+          a(href="#") Обучение
+        li
+          a(href="#") О компании
+        li
+          a(href="#") Контакты
+        li
+          a(href="#") Кейсы
+      .info
+        .adress
+          b Адрес: 
+          span!= companyAdress
+        ul.docs
+          li ООО “Фин Профи”
+          li ИНН: 54545435445
+          li ОГРН: 5645645454
+          li КПП: 376828091235801
+      .contacts
+        .icons
+          a(href=vkLink)!= iconset.vk
+          a(href=fbLink)!= iconset.fb
+          a(href=instLink)!= iconset.inst
+          a(href=tgLink)!= iconset.tg
+          a(href=waLink)!= iconset.wa
+        a.uk-button.btn-outline(href="#cb")
+          span Заказать звонок
+        .tel
+          a.link-phone(href=phoneLink)= phoneNumber
+          p Звонок по России бесплатный
+      .legal
+        .title Юридическая информация:
+        .list
+          a(href=agreementLink) 
+            img(src=`${modulesIco}pdf.svg` data-uk-img alt="")
+            span Пользовательское соглашение
+          a(href=policyLink)
+            img(src=`${modulesIco}pdf.svg` data-uk-img alt="")
+            span Политика конфиденциальности
+          a(href=registrationLink) 
+            img(src=`${modulesIco}pdf.svg` data-uk-img alt="")
+            span Свидетельство о государственной<br> регистрации юридического лица
+          a(href=licenseLink) 
+            span Лицензии
+      

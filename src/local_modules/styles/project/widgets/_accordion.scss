@@ -1,0 +1,275 @@
+$accordion-transition: all 400ms ease-in-out;
+.accordion {
+    li {
+
+        background: #ECECEC;
+
+        position: relative;
+        margin-top: 0 !important;
+        margin-bottom: 1rem;
+
+        &.uk-open {
+            &::before {
+                width: 100%;
+            }
+            .uk {
+                &-accordion {
+                    &-title {
+                        .close {
+                            background: $dark;
+                            svg {
+                                &:last-child {
+                                    path {
+                                        fill: $primary;
+                                    }
+                                }
+                                &:first-child {
+                                    path {
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+                        &::before {
+                            background: #FFE663;
+                        }
+                    }
+                }
+            }
+        }
+        & > * {
+            position: relative;
+            z-index: 2;
+        }
+        &::before {
+            content: '';
+            display: block;
+
+            background: $primary;
+            width: 0;
+            height: 100%;
+            transition: $accordion-transition;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &:not(:last-child) {
+            &::after {
+                content: '';
+                display: block;
+
+                width: 100%;
+                height: 1px;
+                background: rgba(0, 0, 0, 0.08);
+
+                position: absolute;
+                bottom: -0.5rem;
+            }
+        }
+    }
+    .uk {
+        &-accordion {
+            &-title {
+                display: flex;
+                align-items: center;
+                    
+                overflow: hidden;
+
+                width: 100%;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+
+                text-decoration: none;
+                color: $dark;
+
+                min-height: 2.5rem;
+                .icon {
+                    display: flex;
+
+                    margin-left: 1rem;
+                    margin-right: 2.125rem;
+                    z-index: 2;
+                    img, svg {
+                        width: 0.85rem;
+                    }
+                }
+                p {
+                    width: 12.5rem;
+
+                    font-size: 0.875rem;
+                    line-height: 1.3em;
+                    font-weight: 500;
+                } 
+                .close {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    transition: $accordion-transition;
+                    border-radius: 50%;
+                    background: $primary;
+                    width: 1.36rem;
+                    height: 1.36rem;
+
+                    position: relative;
+                    margin-left: auto;
+                    margin-right: 0.6rem;
+
+                    svg {
+                        transition: $accordion-transition;
+                        width: 0.41rem;
+
+                        position: absolute;
+                        path {
+                            transition: $accordion-transition;
+                            fill: $dark;
+                        }
+                        &:first-child {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }  
+                
+                &::before {
+                    content: '';
+                    display: block;
+
+                    background: $primary;
+                    transition: $accordion-transition;
+                    width: 4.4rem;
+                    height: 4.4rem;
+                    border-radius: 50%;
+                    transform: scaleY(1.2);
+
+                    position: absolute;
+                    left: -1.375rem;
+                    z-index: 1;
+                }
+            }
+            &-content {
+
+                border-top: 1px solid #EFD23B;
+
+                font-size: 0.8rem;
+                line-height: 1.4em;
+                padding: 1rem;
+
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .accordion {
+        li {
+            margin-bottom: 38px;
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+                .uk {
+                    &-accordion {
+                        &-title {
+                            .close {
+                                background: $dark;
+                                svg {
+                                    &:last-child {
+                                        path {
+                                            fill: $primary;
+                                        }
+                                    }
+                                    &:first-child {
+                                        path {
+                                            fill: $primary;
+                                        }
+                                    }
+                                }
+                            }
+                            &::before {
+                                background: #FFE663;
+                            }
+                        }
+                    }
+                }
+            }
+            &.uk-open {
+            }
+            &:not(:last-child) {
+                &::after {
+                    position: absolute;
+                    bottom: -19px;
+                }
+            }
+        }
+        .uk {
+            &-accordion {
+                &-title {
+                    min-height: 89px;
+                    .icon {
+                        margin-left: 38px;
+                        margin-right: 75px;
+
+                        img, svg {
+                            width: 30px;
+                        }
+                    }
+                    p {
+                        width: 345px;
+
+                        font-size: 22px;
+                    } 
+                    .close {
+                        width: 49px;
+                        height: 49px;
+    
+                        margin-right: 22px;
+    
+                        svg {
+                            width: unset;
+
+                            path {
+                            }
+                            &:first-child {
+                            }
+                        }
+                    }  
+                    
+                    &:focus {
+                        .close {
+                            background: $dark;
+                            svg {
+                                &:last-child {
+                                    path {
+                                        fill: $primary;
+                                    }
+                                }
+                                &:first-child {
+                                    path {
+                                        fill: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &::before {
+                        width: 159px;
+                        height: 159px;
+                        transform: unset;
+    
+                        left: -49px;
+                    }
+                }
+                &-content {
+    
+                    border-top: 2px solid #EFD23B;
+    
+                    font-size: 20px;
+                    padding: 21px 30px 31px 37px;
+                }
+            }
+        }
+    }
+}

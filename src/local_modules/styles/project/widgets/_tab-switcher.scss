@@ -1,0 +1,132 @@
+.tab-switcher {
+	.slidenav {
+		display: none;
+	}
+	.uk {
+		&-slider {
+			&-container {
+				overflow: visible;
+			}
+			&-items {
+
+				margin-bottom: 2.1rem;
+
+				li {
+					// что за блок
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-left: 1rem;
+					padding-right: 1rem;
+					// стили
+					transition: $transition--hover;
+					border: 1px solid $dark;
+					background: rgba(255, 255, 255, 0);
+					position: relative;
+					// шрифтовые стили
+
+					//отступы 
+					
+					a {
+						display: inline-flex;
+						flex-direction: column;
+						align-items: center;
+
+						user-select: none;
+
+						color: $dark;
+						text-decoration: none;
+						font-weight: normal;
+						text-align: center;
+						line-height: 2.375rem;
+						font-size: 0.875rem;
+
+						&::after {
+							content: attr(data-text);
+							content: attr(data-text) / "";
+							height: 0;
+							visibility: hidden;
+							overflow: hidden;
+							user-select: none;
+							pointer-events: none;
+							font-weight: 500;
+						}
+					}
+
+					&.active {
+						background: $primary;
+						border: 1px solid $primary;
+
+						a {
+							cursor: default;
+							font-weight: 500;
+						}
+					}
+
+					&:not(:last-child) {
+						margin-right: 0.5625rem;
+					}
+				}
+			}
+		} // -slider
+
+		&-switcher {
+		}
+	}
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+	.tab-switcher {
+		position: relative;
+		.slidenav {
+			display: flex;
+			position: absolute;
+
+			width: 55px;
+			height: 55px;
+			box-shadow: 0 0 181px 248px rgba(255,255,255,.8);
+
+			top: 5px;
+
+			img, svg {
+				width: 10px;
+			}
+			&-next {
+				right: 0px;
+			}
+			&-prev {
+				right: 67px;
+			}
+		}
+		.uk {
+			&-slider {
+				&-items {
+	
+					margin-bottom: 60px;
+	
+					li {
+						border: 2px solid $dark;
+						 
+						padding-left: 20px;
+						padding-right: 20px;
+						
+						a {
+							font-weight: 500;
+							text-align: center;
+							line-height: 60px;
+							font-size: 20px;
+						}
+	
+						&.active {
+							border: 2px solid $primary;
+						}
+	
+						&:not(:last-child) {
+							margin-right: 18px;
+						}
+					}
+				}
+			} 
+		}
+	}
+}

@@ -1,0 +1,61 @@
+.section-form {
+    padding-top: 4rem;
+    padding-bottom: 3.1rem;
+
+    @include bg($primary);
+    .img {
+        &-bg {
+            display: none;
+        }
+    }
+
+    header {
+        margin-bottom: 1.7rem;
+    }
+    h4 {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.45em;
+
+        margin-top: 1.4rem;
+    }
+
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+
+    .section-form {
+        padding-top: 80px;
+        padding-bottom: 86px;
+
+        @include bg($dark);
+    
+        .img {
+            &-bg {
+                display: block;
+            }
+        }
+
+        header {
+            margin-bottom: 54px;
+        }
+        h2 {
+            text-align: left;
+            color: white;
+            font-size: 45px;
+        }
+
+        h4 {
+            width: 570px;
+
+            text-align: left;
+            font-size: 22px;
+            font-weight: normal;
+            line-height: 1.5em;
+            color: white;
+
+            margin-top: 39px;
+        }
+    
+    }
+}

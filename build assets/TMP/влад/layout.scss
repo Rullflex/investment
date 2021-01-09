@@ -1,0 +1,158 @@
+@import "../../../../local_modules/styles/project/layout/header";
+@import "../../../../local_modules/styles/project/layout/section-form";
+
+.sec2 {
+  padding-top: 2.725rem;
+  padding-bottom: 3.3125rem;
+
+  background: #FAFAFA;
+  box-shadow: inset 0px 0px 39px rgba(32, 32, 32, 0.07);
+
+  h2 {
+    margin-bottom: 1.125rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.45em;
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+  .sec2 {
+    padding-top: 61px;
+    padding-bottom: 67px;
+
+    // @include bg(#FAFAFA);
+
+    header {
+      display: flex;
+      align-items: center;
+    }
+
+    h2 {
+      width: 154px;
+
+      font-size: 45px;
+      text-align: left;
+      line-height: 47.25px;
+
+      margin-bottom: 0;
+      margin-right: 84px;
+    }
+
+    h4 {
+      width: 884px;
+
+      text-align: left;
+      font-size: 24px;
+
+      margin-top: 4px;
+    }
+  }
+}
+
+.sec3 {
+  padding-top: 2.75rem;
+  padding-bottom: 3.5rem;
+
+  h2 {
+    margin-bottom: 1.9875rem;
+  }
+
+  .sec-left {
+    padding: .75rem 1.3125rem 3rem 1.5625rem;
+
+    background: #FFDD2D;
+    font-size: 0.875rem;
+
+    margin-bottom: 2.3125rem;
+    h4 {
+      margin-bottom: 1.2875rem;
+    }
+  }
+
+  .sec-right {
+    padding-bottom: 2.25rem;
+
+    border-bottom: 1px solid rgba(#434343, 0.1);
+
+    margin-bottom: 1.6875rem;
+
+    p {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+  .sec3 {
+    padding-top: 77px;
+    padding-bottom: 125px;
+
+    h2 {
+      margin-bottom: 59px;
+    }
+    .sec {
+      &-wrapper {
+        display: flex;
+      }
+      &-left {
+        margin-right: 79px;
+        margin-bottom: 72px;
+
+        width: 1638px;
+        line-height: 31.9px;
+
+        padding: 22px 21px 0px 54px;
+
+        h4 {
+          padding-bottom: 56px;
+
+          font-size: 18px;
+
+          position: relative;
+          margin-bottom: 38px;
+
+          &::after {
+            content: '';
+            display: block;
+            background: #424242;
+            height: 6px;
+            width: 45px;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+      }
+      &-right {
+        border: none;
+
+        font-size: 18px;
+        line-height: 26.1px;
+
+        p {
+          margin-bottom: 26px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      &-bottom {
+        margin-top: -23px;
+      }
+    }
+  }
+}
+
+.sec6 {}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+  .sec6 {}
+}

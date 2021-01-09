@@ -1,0 +1,175 @@
+// Color system
+$light:   #ffffff !default;
+$dark:   #424242 !default;
+$muted:   rgba(66, 66, 66, 0.45) !default;
+$primary:  #FFDD2D !default;
+$placeholder: rgba(66, 66, 66, 0.3) !default;
+$red:     #dc3545 !default;
+
+$black: #000 !default;
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+// lightgallery variables, now we use uikit for galleries
+$backdrop-opacity: 0.8 !default;
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-display-utilites:     true !default;
+$enable-position-utilites:    false !default;
+$enable-grid-classes:         true !default;
+$enable-negative-margins:     false !default;
+$enable-smooth-scroll:        true !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                   null !default;
+$body-color:                $dark !default;
+$body-text-align:           null !default;
+
+// https://ux.pub/polnoe-rukovodstvo-po-pravilnomu-ispolzovaniyu-animatsii-v-ux/
+// Animations
+$animation-type: ease-in-out;
+// -- hover effects, fading, scaling
+$transition--very-fast: all 100ms $animation-type;
+$transition--fast: all 200ms $animation-type;
+// -- large moves, complex easing
+$transition--normal: all 300ms $animation-type;
+$transition--slow: all 400ms $animation-type;
+$transition--very-slow: all 500ms $animation-type;
+
+$transition--hover:           all 250ms $animation-type !default;
+$transition-base:             all 200ms ease-in-out !default;
+$transition-fade:             opacity 150ms linear !default;
+$transition-collapse:         height 350ms ease !default;
+$ease-bg: all 250ms ease-in-out;
+$ease-textflow: all 300ms ease-in;
+
+
+// Links
+
+$link-color:                             rgba(66, 66, 66, 0.44) !default;
+$link-decoration:                         underline !default;
+$link-hover-color:                       rgba(66, 66, 66, 0.80);
+$link-hover-decoration:                   null !default;
+
+
+// UiKit grid
+
+$global-small-gutter: 10px !default;
+$global-gutter: 20px !default;
+$global-medium-gutter: 10px !default;
+$global-large-gutter: 70px !default;
+
+$container-max-width: 1170px !default;
+$container-xsmall-max-width: 750px !default;
+$container-small-max-width: 900px !default;
+$container-large-max-width: 1400px !default;
+$container-xlarge-max-width: 1600px !default;
+$container-padding-horizontal: 10px !default;
+
+$breakpoint-small: 420px !default;
+$breakpoint-medium: 768px !default;
+$breakpoint-large: 1190px !default;
+$breakpoint-xlarge: 1600px !default;
+
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 420px,
+    md: 768px,
+    lg: 1210px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+    sm: 420px,
+    md: 768px,
+    lg: 1210px
+);
+
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           40px !default;
+$grid-row-columns:            6 !default;
+$embed-responsive-aspect-ratios: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$embed-responsive-aspect-ratios: join(
+(
+    (21 9),
+    (16 9),
+    (4 3),
+    (1 1),
+  ),
+  $embed-responsive-aspect-ratios
+);
+
+// Typography
+$font-family-base: "FuturaPT", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-code: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$global-font-family: $font-family-base;
+
+
+// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
+// $font-size-base effects the font size of the body text
+$font-size-root:              null !default;
+$font-size-base:              1rem !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$line-height-base:            1.5 !default;
+$line-height-sm:              1.25 !default;
+$line-height-lg:              2 !default;
+
+$small-font-size:             0.875em !default;
+
+$sub-sup-font-size:           0.75em !default;
+
+// Code
+
+$code-font-size:                    $small-font-size !default;
+$code-color:                        $pink !default;
+
+$pre-color:                         null !default;
+
+// Utilities
+
+$displays: none, inline, inline-block, block, flex;
+$overflows: auto, hidden;
+$positions: static, relative, absolute, fixed, sticky;
+
+// значение прозрачности для заблоченых ссылок, кнопок, инпутов
+$disabled-opacity: 0.7;

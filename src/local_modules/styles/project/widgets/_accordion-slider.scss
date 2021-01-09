@@ -1,0 +1,373 @@
+.accordion-slider {
+    position: relative;
+    .slidenav {
+        position: absolute;
+        top: 0;
+        &-prev {
+            right: 2.5rem;
+        }
+        &-next {
+            right: 0;
+        }
+    }
+    .uk-slider-item {
+        position: relative;
+        width: 16.31rem;
+        height: 23.4375rem;
+        &.phantom {
+            margin-top: 3.7rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            list-style-type: none;
+            padding: 0;
+            pointer-events: none;
+            .head .icon {
+                background: transparent;
+            }
+            .card {
+                padding-top: 18px;
+            }
+            ul li {
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba(41, 41, 41, 0.14) !important;
+                }
+                .point {
+                    color: #9C9C9C;
+                }
+                .value {
+                    color: transparent;
+                }
+            }
+        }
+        &.invisible {
+            .card {
+                opacity: 0;
+            }
+        }
+        &.active, &.invisible {
+            .card {
+                background: rgba(255, 255, 255, 0);
+                box-shadow: -9px 10px 81px rgba(0, 0, 0, 0);
+                padding-left: 0;
+
+                ul li {
+                    &:not(:last-child) {
+                        // border-bottom: 1px solid transparent;
+                    }
+                    .point {
+                        display: inline;
+                        color: #9C9C9C;
+                    }
+                    .value {
+                        margin-left: 0.2rem;
+                        &::before {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .card {
+        transition: $transition--slow;
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: -9px 10px 81px rgba(0, 0, 0, 0.08);
+        opacity: 1;
+
+        padding-top: 1.06rem;
+        padding-left: 1.25rem;
+
+        .head {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 1rem;
+            .icon {
+                flex-shrink: 0;
+                width: 2.875rem;
+                height: 2.875rem;
+                border-radius: 50%;
+                background: $primary;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-right: 1.06rem;
+                img, svg {
+                    width: 0.94rem;
+                }
+            }
+
+            .title {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                .badge {
+                    display: inline-block;
+                    font-weight: bold;
+                    font-size: 0.5rem;
+                    line-height: 0.9375rem;
+                    padding-left: 0.3rem;
+                    padding-right: 0.3rem;
+                    background: $primary;
+                    text-transform: uppercase;
+                }
+                p {
+                    font-weight: 600;
+                    font-size: 1.125rem;
+                    line-height: 1em;
+                    &.lg {
+
+                    }
+                }
+            }
+        }
+
+        ul {
+            width: 13.81rem;
+            li {
+                transition: $transition--fast;
+                width: 100%;
+                padding-top: 0.7rem;
+                padding-bottom: 0.7rem;
+                height: unset;
+                display: flex;
+                align-items: center;
+                position: relative;
+                &:not(:last-child) {
+                    border-bottom: 1px solid rgba(41, 41, 41, 0.14)
+                }
+
+               
+                .point {
+                    position: absolute;
+                    font-size: 0.875rem;
+                    line-height: 1em;
+                    font-weight: 500;
+                    color: transparent;
+                }
+                .value {
+                    display: inline;
+                    font-weight: 600;
+                    line-height: 1em;
+                    font-size: 0.875rem;
+
+                    margin-left: 1.375rem;
+                    &::before {
+                        transition: $transition--fast;
+                        content: '';
+                        display: block;
+                        width: 0.5625rem;
+                        height: 0.5625rem;
+                        background: $primary;
+                        border-radius: 50%;
+                        @include center-item-y('absolute');
+                        left: 0;
+                    }
+                    &.lg {
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .uk {
+        &-slider-container {
+            overflow: visible;
+            position: relative;
+            width: 16.31rem;
+    
+            padding-top: 3.7rem;
+        }
+        &-dotnav {
+            justify-content: start;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            margin-top: 0.3rem;
+        }
+    }
+}
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .accordion-slider {
+        position: static;
+        .slidenav {
+            top: 530px;
+            &-prev {
+                left: 57px;
+            }
+            &-next {
+                right: 57px;
+            }
+        }
+
+        .uk-slider-item {
+            width: 377px;
+            height: 637px;
+            margin-left: -180px;
+            &.active {
+                .card {
+                    width: 640px;
+                }
+            }
+            &.phantom {
+                margin-top: 1px;
+                top: 0;
+                left: -30px;
+                .card {
+                    width: 805px;
+                }
+                .head {
+                    margin-bottom: 25px;
+                    .icon {
+                        background: transparent;
+                    }
+                }
+                ul li {
+                    .point {
+                        display: inline !important;
+                        color: $dark;
+                        font-weight: 600;
+                        font-size: 24px;
+                    }
+                }
+            }
+            &.active, &.invisible {
+                .card {
+                    .head {
+                        .icon {
+                            width: 74px;
+                            height: 74px;
+                            img, svg {
+                                width: 24px;
+                            }
+                        }
+        
+                        .title {
+                            .badge {
+                            }
+                            p {
+                                font-size: 33px;
+                            }
+                        }
+                    }
+                    ul li {
+                        &:not(:last-child) {
+                            border-bottom: 1px solid transparent;
+                        }
+                        &:first-child {
+                            border-top: 1px solid rgba(41, 41, 41, 0);
+                        }
+                        &:last-child {
+                            border-bottom: 1px solid rgba(41, 41, 41, 0);
+                        }
+                        .point {
+                            display: none;
+                        }
+                        .value {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .card {
+            position: absolute;
+            box-shadow: -34px 20px 70px rgba(0, 0, 0, 0.06);
+
+            padding-top: 18px;
+            padding-left: 33px;
+            padding-right: 33px;
+
+            .head {
+                * {
+                    transition: $transition--slow;
+                }
+                margin-bottom: 33px;
+                .icon {
+                    width: 66px;
+                    height: 66px;
+                    margin-right: 26px;
+                    img, svg {
+                        width: 22px;
+                    }
+                }
+
+                .title {
+                    .badge {
+                        font-size: 12px;
+                        line-height: 24px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    p {
+                        font-size: 24px;
+                        &.lg {
+
+                        }
+                    }
+                }
+            }
+
+            ul {
+                width: 100%;
+                li {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    &:first-child {
+                        border-top: 1px solid rgba(41, 41, 41, 0.14);
+                    }
+                    &:last-child {
+                        border-bottom: 1px solid rgba(41, 41, 41, 0.14);
+                    }
+                    .point {
+                        font-size: 24px;
+                    }
+                    .value {
+                        font-weight: normal;
+                        font-size: 22px;
+
+                        margin-left: 21px;
+                        transition: $transition--fast;
+                        &::before {
+                            width: 9px;
+                            height: 9px;
+                        }
+                        &.lg {
+                            font-size: 30px;
+                        }
+                    }
+                    &:last-child() .lg{
+
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .uk {
+            &-slider-container {
+                width: unset;
+                margin-left: 640px;
+        
+                padding-top: 0;
+                
+            }
+            &-dotnav {
+                display: none;
+            }
+        }
+    }
+}   

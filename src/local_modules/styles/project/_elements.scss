@@ -1,0 +1,115 @@
+@import "./elements/button";
+@import "./elements/input";
+
+h2 {
+    text-align: left;
+    color: $dark;
+    font-size: 1.5rem;
+    line-height: 1.3em;
+    font-weight: 600;
+    
+    letter-spacing: .025em;
+}
+
+h4 {
+    text-align: left;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.45em;
+    color: $dark;
+    
+    margin-top: 1rem;
+}
+
+.divider {
+    &-primary {
+        width: 1.4375rem;
+        height: 0.1875rem;
+        background: $primary;
+    }
+}
+header > .divider-primary {
+    display: none;
+}
+
+.uk-dotnav, .uk-dotnav {
+    justify-content: center;
+    margin-left: 0;
+        & > * {
+            padding: 0.5rem;
+        }
+    .uk-active {
+        a {
+            background: $primary;
+        }
+    }
+    a {
+        width: 0.6875rem;
+        height: 0.6875rem;
+        background: #D7D7D7;
+        transition: $transition--hover;
+    }
+}
+.slidenav {
+    display: flex;
+    background: $primary;
+    border-radius: 50%;
+    width: 2.06rem;
+    height: 2.06rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    img, svg {
+        width: 0.375rem;
+    }
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    h2 {
+        text-align: center;
+        font-size: 40px;
+        line-height: 1.2em;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 27px;
+        
+        margin-top: 18px;
+    }
+
+    .divider {
+        &-primary {
+            width: 45px;
+            height: 6px;
+
+            margin-top: 33px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    header > .divider-primary {
+        display: block;
+    }
+
+    .uk-dotnav, .uk-dotnav {
+            & > * {
+                padding: 11px;
+            }
+        a {
+            width: 14px;
+            height: 14px;
+            &:hover {
+                background: #fae78b;
+            }
+        }
+    }
+
+    .slidenav {
+        width: 66px;
+        height: 66px;
+        img, svg {
+            width: 12px;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+header.header(data-uk-sticky="top: 100vh; animation: uk-animation-slide-top")
+    .container
+        nav.uk-navbar
+            .uk-navbar-left
+                a(href=mainPageLink)
+                    img.uk-img.img-logo.uk-logo(src=`${modulesIco}logo.svg` alt=companyName)
+            .uk-navbar-right
+                .d-flex.d-lg-none
+                    a.uk-icon.link-callback(href="#cb")!= iconset.calling
+                    a.uk-icon(href="#")
+                        - for (var x = 0; x < 4; x++) 
+                            i
+                    .uk-navbar-dropdown(data-uk-dropdown="mode: click; pos: bottom-justify; boundary: .header; boundary-align: true; animation: uk-animation-slide-top-small; duration: 300")
+                        .uk-nav.uk-navbar-dropdown-nav
+                            a.link-test(href="#quiz" data-uk-toggle) 
+                                span Определи свой психотип инвестора
+                                svg(width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+                                    path(fill-rule="evenodd" clip-rule="evenodd" d="M1.32568 1.33506C1.75992 0.888314 2.46397 0.888314 2.89821 1.33506L5.67432 4.1911C6.10856 4.63784 6.10856 5.36216 5.67432 5.8089L2.89821 8.66494C2.46397 9.11169 1.75992 9.11169 1.32568 8.66494C0.89144 8.2182 0.891439 7.49388 1.32568 7.04714L3.31553 5L1.32568 2.95286C0.891439 2.50612 0.89144 1.7818 1.32568 1.33506Z" fill="#424242" stroke="white" stroke-linecap="round" stroke-linejoin="round")
+                            .uk-nav-divider
+                            ul.uk-nav
+                                li
+                                    a(href=`${mainPageLink}about`) О КОМПАНИИ
+                                li
+                                    a(href="#") КЕЙСЫ
+                                li
+                                    a(href="#") ОБУЧЕНИЕ
+                                li
+                                    a(href="#") КОНТАКТЫ
+                                li
+                                    a(href=partnersLink) ПАРТНЁРАМ
+                            .uk-nav-divider
+                            a.link-cabinet(href=cabinetLink)!= iconset.user
+                                span войти/зарегистрироваться
+                            .icons
+                                a(href=instLink)!= iconset.inst
+                                a(href=waLink)!= iconset.wa
+                            a.link-phone(href=phoneLink)= phoneNumber
+                .d-none.d-lg-flex
+                    .place!= iconset.pin
+                        span Москва
+                    a.link-test(href="#quiz" data-uk-toggle) 
+                        span Определи свой психотип инвестора
+                        svg(width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+                            path(fill-rule="evenodd" clip-rule="evenodd" d="M1.32568 1.33506C1.75992 0.888314 2.46397 0.888314 2.89821 1.33506L5.67432 4.1911C6.10856 4.63784 6.10856 5.36216 5.67432 5.8089L2.89821 8.66494C2.46397 9.11169 1.75992 9.11169 1.32568 8.66494C0.89144 8.2182 0.891439 7.49388 1.32568 7.04714L3.31553 5L1.32568 2.95286C0.891439 2.50612 0.89144 1.7818 1.32568 1.33506Z" fill="#424242" stroke="white" stroke-linecap="round" stroke-linejoin="round")
+                    .icons
+                        a(href=instLink)!= iconset.inst
+                        a(href=waLink)!= iconset.wa
+                    a.link-cabinet(href=cabinetLink)!= iconset.user
+                        span войти/зарегистрироваться
+        nav.uk-navbar.d-none.d-lg-flex
+            .currentContext
+                a.active
+                    span Инвесторам
+                a(href=partnersLink)
+                    span Партнёрам
+            ul.uk-nav
+                li
+                    a(href=`${mainPageLink}about`) О компании
+                li
+                    a(href="#") Кейсы
+                li
+                    a(href="#") Обучение
+                li
+                    a(href="#") Контакты
+            a(href="#cb").uk-button.btn-outline
+                span Заказать звонок

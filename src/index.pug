@@ -1,0 +1,1076 @@
+extends local_modules/layout/_layout
+
+prepend head
+  title Инвестиции - Главная страница
+  meta(name="description", content="Описание страницы")
+
+block content
+  main.main
+    section.sec1
+      .sec1__slider(data-uk-slideshow="ratio: false; animation: fade; autoplay: true; autoplay-interval: 6000;")
+        ul.uk-slideshow-items
+          -
+            var list = [
+              [
+                '1 000 000 000 $ причин инвестировать<br> на мастер счете с&nbsp;Gas&nbsp;Capital',
+                'Инвестируйте на мастер счете с доходом от&nbsp;50%&nbsp;в&nbsp;год<br class="d-none d-lg-inline">  у передовых международных брокеров с серьезной репутацией'
+              ],
+              [
+                'Составление высокодоходного<br class="d-none d-lg-inline"> личного финансового плана ',
+                'Наведите порядок в личных финансах и начните управлять<br class="d-none d-lg-inline"> своими активами для достижения целей'
+              ],
+              [
+                'Доверительное управление капиталом<br class="d-lg-none"> с&nbsp;доходностью от&nbsp;35% годовых в долларах<br class="d-lg-none"> по&nbsp;уникальным инструментам',
+                'Управляем активами учитывая любой<br class="d-lg-none"> риск-профиль инвестора<br class="d-none d-lg-inline"> с максимально надежным хеджированием всех рисков'
+              ],
+              [
+                'Инвестируйте самостоятельно с высоким<br class="d-none d-lg-inline"> доходом под контролем профессионалов<br> с&nbsp;10-летним опытом',
+                'Специалисты GAS Capital помогут вам преумножить ваш капитал'
+              ],
+              [
+                'VIP управление активами со&nbsp;страховкой депозита от&nbsp;50% годовых в&nbsp;долларах',
+                'Доверьте управление активами экспертам высокого<br class="d-none d-lg-inline"> уровня с&nbsp;абсолютной защищенностью вашего капитала '
+              ],
+              [
+                'Безопасные и&nbsp;высокодоходные<br class="d-lg-none"> IPO от&nbsp;100% в&nbsp;год с&nbsp;элементами хеджирования',
+                'Высокие аллокации с&nbsp;низкими<br class="d-lg-none"> lock-up периодами'
+              ]
+            ]
+          each item, idx in list
+            li
+              .uk-position-cover.uk-animation-kenburns.uk-animation-reverse.uk-transform-origin-center-center.ibg
+                +picture-jpg(`${assets}s1-slider-i${idx + 1}`, '', iAlt)
+              .content(data-uk-slideshow-parallax="x: 100,-100")
+                .container
+                  h2!= item[0]
+                  h3!= item[1]
+        a.slide-nav-prev.uk-position-center-left(href="#" data-uk-slideshow-item="previous")!= iconset.angleleft
+        a.slide-nav-next.uk-position-center-right(href="#" data-uk-slideshow-item="next")!= iconset.angleright
+        .container
+          a.uk-button.btn-solid(href="#")
+            span Узнать подробнее
+          .partners
+            p Наши партнёры:
+            +picture-png-solo(`${assets}s1-partners`)
+        ul.uk-slideshow-nav.uk-dotnav
+      .sec1__advan
+        .container
+          -
+            var list = [
+              {
+                icon: iconset.secure,
+                title: 'Надежность',
+                descr: 'Клиент является собственником всех активов. Выводы осуществляются только владельцем счёта'
+              },
+              {
+                icon: iconset.profit,
+                title: 'Взаимовыгода',
+                descr: 'Оцениваем свою доходность только как долю прибыли с управления клиентскими активами'
+              },
+              {
+                icon: iconset.ok,
+                title: 'Сохранность',
+                descr: 'Всем клиентам обеспечивается максимальная<br class="d-none d-lg-inline"> защита от “Неторговых рисков" у надёжных брокеров'
+              }
+            ]
+          each item, idx in list
+            div(class=`block i${idx + 1}`)
+              .head
+                .icon!= item.icon
+                p= item.title
+              .descr!= item.descr
+            if idx != 2
+              .divider
+    section.sec2
+      .img-bg.ibg
+        +picture-jpg(`${assets}s2-bg`, '', '', false)
+      .container
+        header  
+          h2 Куда вложиться<br class="d-lg-none"> инвестору в 2021 году
+          h4 и преумножить с надежностью<br class="d-lg-none"> свой капитал?
+          .divider-primary
+        .sec2__slider.accordion-slider
+          ul.uk-slider-nav.uk-dotnav
+          a.slidenav.slidenav-prev(href="#" data-uk-slider-item="previous")!= iconset.angleleft
+          a.slidenav.slidenav-next(href="#" data-uk-slider-item="next")!= iconset.angleright
+          .uk-slider-container
+            
+            li.uk-slider-item.phantom.active.d-none.d-lg-flex
+                .card
+                  .head
+                    .icon
+                  ul
+                    li
+                      .wrap
+                        .point Ликвидность:
+                        .value Высокая
+                    li
+                      .wrap
+                        .point Диверсификация:
+                        .value Есть
+                    li
+                      .wrap
+                        .point Гарантии:
+                        .value Есть (прописанная в договоре)
+                    li
+                      .wrap
+                        .point Доходность в год ($):
+                        .value.lg 6-12%
+                    li
+                      .wrap
+                        .point Доходность под<br> нашим управлением ($):
+                        .value.lg от 30%
+            ul.uk-slider-items
+              -
+                var list = [
+                  {
+                    icon: iconset.market,
+                    title: 'Фондовый рынок',
+                    values: ['Высокая', 'Есть', 'Есть<br class="d-lg-none"> (прописанная в договоре)', '6-12%', 'от 30%']
+                  },
+                  {
+                    icon: iconset.property,
+                    title: 'Недвижимость',
+                    values: ['Низкая', 'Отсутствует или минимальная', 'Нет', '5-8%', 'Нет']
+                  },
+                  {
+                    icon: iconset.bag,
+                    title: 'Бизнес',
+                    values: ['Нестабильная', 'Отсутствует или минимальная', 'Нет', '10-12%', 'Нет']
+                  },
+                  {
+                    icon: iconset.profit,
+                    title: 'IPO',
+                    values: ['Нестабильная', 'Отсутствует или минимальная', 'Нет', '60%', 'от 100%']
+                  },
+                  {
+                    icon: iconset.filter,
+                    title: 'Аукционы',
+                    values: ['Нестабильная', 'Отсутствует или минимальная', 'Нет', '50%', 'от 100%']
+                  }
+                ]
+              each item, idx in list
+                li.uk-slider-item
+                  .card
+                    .head
+                      .icon!= item.icon
+                      .title
+                        if idx == 0
+                          .badge Лучший выбор
+                        p.lg= item.title
+                    ul
+                      li
+                        .wrap
+                          .point Ликвидность:
+                          .value= item.values[0]
+                      li
+                        .wrap
+                          .point Диверсификация:
+                          .value= item.values[1]
+                      li
+                        .wrap
+                          .point Гарантии:
+                          .value!= item.values[2]
+                      li
+                        .wrap
+                          .point Доходность в год ($):
+                          .value.lg= item.values[3]
+                      li
+                        .wrap
+                          .point Доходность под<br> нашим управлением ($):
+                          if idx == 1 || idx == 2
+                            .value= item.values[4]
+                          else
+                            .value.lg= item.values[4]
+            a.uk-button.btn-solid(href="#")
+              span Узнать подробнее
+    section.sec3
+      .container
+        header  
+          h2 Поможем вам разобраться&nbsp;в&nbsp;трудных<br> вопросах на самом старте
+          .divider-primary
+        .tab-switcher
+          a.slidenav.slidenav-prev(href="#" data-uk-slider-item="previous")!= iconset.angleleft
+          a.slidenav.slidenav-next(href="#" data-uk-slider-item="next")!= iconset.angleright
+          .uk-slider-container
+            ul.uk-slider-items
+              -
+                var items = [
+                  "Подобные компании мошенники",
+                  "Страх потери средств", 
+                  "Почему высокая процентная ставка?",
+                  "Почему высокая процентная ставка?"
+                ]
+              each item in items
+                li
+                  a(data-text=item)= item
+          
+          ul.uk-switcher-items.d-none
+            each item in items
+              li
+                a(href="#" data-text=item)= item
+          ul.uk-switcher
+            -
+              var body = {
+                  'Я где-то слышал, что подобные компании мошенники?': 'Мы находимся в реестре юридических лиц, имеем лицензию ЦБ РФ на осуществление брокерской деятельности и аттестацию специалистов финансового рынка.',
+                  'Lorem': 'Lorem TEXT',
+                  'Uni': 'Lorem TEXT',
+                  'Unic': 'Lorem TEXT',
+              }
+            each text, title in body
+              li
+                .title= title
+                .descr= text
+
+    section.sec4
+      .container
+        +picture-png(`${assets}s4-phone`, 'img-phone')
+        header
+          h2 6 инструментов<br class="d-lg-none"> GAS Capital
+          h4 Которые позволяют заработать на фондовом рынке больше 30% в&nbsp;год с&nbsp;минимальными рисками
+          .divider-primary
+        ul.accordion
+          -
+            var body = [
+              ['> 50 аналитических индикаторов', 'Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.', iconset.market],
+              ['Защитные ордера<br class="d-lg-none"> и страховка рисков', 'Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.', iconset.secure],
+              ['Уникальный подход<br class="d-lg-none"> к составлению портфелей', 'Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.', iconset.star],
+              ['Командное управление счетом', 'Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.', iconset.team],
+              ['Качественная диверсификация', 'Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.', iconset.graph],
+              ['Хеджирование рисков', 'Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.', iconset.profit]
+            ]
+
+          each value in body
+            li
+              a.uk-accordion-title(href="#")
+                .icon!= value[2]
+                p!= value[0]
+                .close
+                  svg(width="15" height="3" viewBox="0 0 15 3" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+                    path(d="M0 3V0H5.87558H9.12442H15V3H9.12442H5.87558H0Z" fill=primary)
+                  svg(width="15" height="3" viewBox="0 0 15 3" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+                    path(d="M0 3V0H5.87558H9.12442H15V3H9.12442H5.87558H0Z" fill=primary)
+              .uk-accordion-content
+                p!= value[1]
+
+    section.sec5
+      .img-bg.ibg
+        +picture-jpg(`${assets}s2-bg`, '', '', false)
+      .container
+        header  
+          h2 Выберите направление,<br> по&nbsp;которому будем инвестировать
+          .divider-primary
+        .accordion-slider
+          +slider-dots()
+          +slider-nav()
+          .uk-slider-container
+            
+            li.uk-slider-item.phantom.active.d-none.d-lg-flex
+                .card
+                  .head
+                    .icon
+                  .descr.invisible 'Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфель.
+                  ul
+                    li
+                      .wrap
+                        .point Выбор брокера:
+                        .value smth
+                    li
+                      .wrap
+                        .point Процент доходности (в год):
+                        .value smth
+                    li
+                      .wrap
+                        .point Выбор стратегии:
+                        .value smth
+                    li
+                      .wrap
+                        .point Мин. сумма вклада:
+                        .value smth
+                    li
+                      .wrap
+                        .point Договор:
+                        .value smth
+                    li
+                      .wrap
+                        .point Страховка:
+                        .value smth
+                    li
+                      .wrap
+                        .point Комиссия за управление:
+                        .value smth
+                    li
+                      .wrap
+                        .point Индивидуальный менеджер:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Экспертное сопровождение:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Обучение:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Бесплатное составление портфеля:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Участие в аукционах:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Инвестиции в активы на базе Block Chain:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Составление портфеля:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Иностранная юрисдикция:
+                        .value smth
+                    li.invisible
+                      .wrap
+                        .point Наличное пополнение и вывод:
+                        .value smth
+            ul.uk-slider-items
+              -
+                var list = [
+                  {
+                    icon: iconset.bag,
+                    title: 'Мастер счет',
+                    descr: 'Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфель.',
+                    values: ['Да', 'от 50%', 'Нет', 'от 3 000 000 руб', 'Нет', 'Да, от брокера', 'от 30% до 50%', 'Да', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет']
+                  },
+                  {
+                    icon: iconset.user,
+                    title: 'Доверительное<br> управление',
+                    descr: 'Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфель.',
+                    values: ['Да', 'от 30%', 'Да', 'от 3 500 000 руб', 'Да', 'По желанию', 'от 30% до 50%', 'Да', 'Да', 'Да', 'Да', 'Нет', 'Нет', 'Да, бесплатно', 'Да', 'Да']
+                  },
+                  {
+                    icon: iconset.user,
+                    title: 'Доверительное<br> управление',
+                    descr: 'Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфель.',
+                    values: ['Да', 'от 50%', 'Да', 'от 50 000 000 руб', 'Да', 'По желанию', '30%', 'Да', 'Да', 'Да', 'Да', 'Да (от 200%)', 'Да (от 60%)', 'Да, бесплатно', 'Да', 'Да']
+                  },
+                  {
+                    icon: iconset.graph,
+                    title: 'Памм счет Fibo',
+                    descr: 'Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфель.',
+                    values: ['Нет', 'от 50%', 'Нет', 'Любая сумма', 'Нет', 'Нет', '50%', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет']
+                  },
+                  {
+                    icon: iconset.filter,
+                    title: 'Самостоятельное<br> управление',
+                    descr: 'Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфель.',
+                    values: ['Да', 'от 20%', 'Нет', 'Любая сумма', 'Нет', 'Нет', '15%', 'Нет', 'Нет', 'Нет', 'Да', 'Нет', 'Нет', 'Да, 199$', 'Да', 'Нет']
+                  },
+                  {
+                    icon: iconset.secure,
+                    title: 'Фиксированное<br> управление',
+                    descr: 'Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфель.',
+                    values: ['Нет', '20%', 'Нет', '3 500 000 руб', 'Да', 'Да', 'Да, приватная', 'Да', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Нет', 'Да', 'Нет']
+                  }
+                ]
+              each item, idx in list
+                li.uk-slider-item
+                  .card
+                    .head
+                      .icon!= item.icon
+                      .title
+                        if idx == 2
+                          .badge VIP
+                        p!= item.title
+                    .descr!= item.descr
+                    ul
+                      li
+                        .wrap
+                          .point Выбор брокера:
+                          .value= item.values[0]
+                      li
+                        .wrap
+                          .point Процент доходности (в год):
+                          .value= item.values[1]
+                      li
+                        .wrap
+                          .point Выбор стратегии:
+                          .value!= item.values[2]
+                      li
+                        .wrap
+                          .point Мин. сумма вклада:
+                          .value= item.values[3]
+                      li
+                        .wrap
+                          .point Договор:
+                          .value= item.values[4]
+                      li
+                        .wrap
+                          .point Страховка:
+                          .value= item.values[5]
+                      li
+                        .wrap
+                          .point Комиссия за управление:
+                          .value= item.values[6]
+                      li
+                        .wrap
+                          .point Индивидуальный менеджер:
+                          .value= item.values[7]
+                      li.invisible
+                        .wrap
+                          .point Экспертное сопровождение:
+                          .value= item.values[8]
+                      li.invisible
+                        .wrap
+                          .point Обучение:
+                          .value= item.values[9]
+                      li.invisible
+                        .wrap
+                          .point Бесплатное составление портфеля:
+                          .value= item.values[10]
+                      li.invisible
+                        .wrap
+                          .point Участие в аукционах:
+                          .value= item.values[11]
+                      li.invisible
+                        .wrap
+                          .point Инвестиции в активы на базе Block Chain:
+                          .value= item.values[12]
+                      li.invisible
+                        .wrap
+                          .point Составление портфеля:
+                          .value= item.values[13]
+                      li.invisible
+                        .wrap
+                          .point Иностранная юрисдикция:
+                          .value= item.values[14]
+                      li.invisible
+                        .wrap
+                          .point Наличное пополнение и вывод:
+                          .value= item.values[15]
+          .btns    
+            a.uk-button.btn-solid(href="#")
+              span Узнать подробнее
+            a.uk-button.btn-outline(href="#")
+              span Смотреть все параметры
+              != iconset.arrowdown
+
+    section.sec6.section-form
+      .img-bg.ibg
+        +picture-jpg-lg(`${assets}s6-bg`, ``, '', false)
+      .container
+        header
+          h2 Не знаете, какое направление выбрать?
+          h4 Оставьте заявку на бесплатную консультацию, и наши эксперты проконсультруют вас и помогут начать инвестировать
+        form.form-common(action="#")
+          .form-main
+            .form-input
+              label Введите ваше имя:
+              input.input.name(type="text" name="Имя" placeholder="Иван")
+            .form-input
+              label Введите ваш телефон:
+              input.input.phone(type="tel" name="Телефон" placeholder="+7 (999) 999-99-99")
+            button.form-submit.uk-button.btn-solid(type="submit")
+              span Получить консультацию
+          .agreement Оставляя заявку, вы даёте согласие на обработку персональных данных
+
+    section.sec7
+      .container
+        header
+          h2 6 впечатляющих примеров доходности за&nbsp;последние 2 года
+          h4 Мы всегда вовремя и по сигналам встаем в&nbsp;сделки, что позволяет<br class="d-none d-lg-inline"> нам делать максимально высокий доход по портфелям.
+        .sec7__slider-cases(data-uk-slider)
+          +slider-nav()
+          .uk-slider-container
+            ul.uk-slider-items
+              -
+                var list = [
+                  {
+                    title: `Более 375% в 2020 году<br> от&nbsp;акций Tesla Motors`,
+                    descr: `
+                    <p>Инвесторы открыли длинную позицию в&nbsp;начале октября 2019 года по $240 за акцию Tesla, закрыв её в конце февраля 2020 года по $915 за акцию.</p>
+                    <p>Резкий рост произошёл на фоне выполнения обещаний автоконцерном по&nbsp;перевыполнению плана производства и продажам автомобилей.</p>
+                    `,
+                    cards: {
+                      1: {
+                        price: `240$`,
+                        isPriceSmall: false,
+                        period: `2019 год`,
+                        isPeriodSmall: false
+                      },
+                      2: {
+                        price: `915$`,
+                        isPriceSmall: false,
+                        period: `2020 год`,
+                        isPeriodSmall: false
+                      },
+                      3: {
+                        price: `375%`,
+                        isPriceSmall: false,
+                        period: `За 5 месяцев`,
+                        isPeriodSmall: true
+                      },
+                    },
+                    about: {
+                      title: `График роста компании Tesla`,
+                      subtitle: `За 5 месяцев акции Tesla принесли более 375% дохода`,
+                      isSubSmall: true,
+                      companyImgTYPE: `svg`
+                    }
+                  },
+                  {
+                    title: `6 декабря 2018 года вы бы могли заработать 55% всего за 9 дней`,
+                    descr: `
+                    <p>Открыв длинную позицию по акциям Лукойл с маржинальным обеспечением</p>
+                    <p>26 ноября 2018 года по 4046 рублей за акцию.<br> Закрыв позицию 6 декабря по 5260 рублей за акцию.<br> Прибыль за 9 дней составила 55% или 542% годовых!</p>
+                    `,
+                    cards: {
+                      1: {
+                        price: `4 046 ₽`,
+                        isPriceSmall: true,
+                        period: `26 ноября`,
+                        isPeriodSmall: false
+                      },
+                      2: {
+                        price: `5 260 ₽`,
+                        isPriceSmall: true,
+                        period: `9 декабря`,
+                        isPeriodSmall: false
+                      },
+                      3: {
+                        price: `542%`,
+                        isPriceSmall: false,
+                        period: `За 9 дней`,
+                        isPeriodSmall: false
+                      },
+                    },
+                    about: {
+                      title: `График роста компании Лукойл`,
+                      subtitle: `+55% прибыли за 9 дней`,
+                      isSubSmall: false,
+                      companyImgTYPE: `svg`
+                    }
+                  },
+                  {
+                    title: `Более 40% за 1 сутки от компании Ozon, благодаря выходу на IPO`,
+                    descr: `<p>Ozon провел блестящее IPO в 2020 году. Итоговая цена размещения значительно превысила первоначально определенный диапазон $22,5-27,5 за бумагу и составила $43,5.</p>`,
+                    cards: {
+                      1: {
+                        price: `22,5$`,
+                        isPriceSmall: false,
+                        period: `Планируемая цена`,
+                        isPeriodSmall: true
+                      },
+                      2: {
+                        price: `43,5$`,
+                        isPriceSmall: false,
+                        period: `Фактическая цена`,
+                        isPeriodSmall: true
+                      },
+                      3: {
+                        price: `>40%`,
+                        isPriceSmall: false,
+                        period: `за 1 день`,
+                        isPeriodSmall: false
+                      },
+                    },
+                    about: {
+                      title: `График роста компании Ozon`,
+                      subtitle: `За сутки акции Tesla принесли более 40% дохода`,
+                      isSubSmall: true,
+                      companyImgTYPE: `png`
+                    }
+                  },
+                  {
+                    title: `Рост на 800% у компании Beyond Meat после выхода на IPO в 2019 г. `,
+                    descr: `<p>В мае 2019 года на IPO вышла компания Beyond Meat, один из основных производителей заменителей мяса. За два с половиной месяца стоимость акций производителя выросла на 800% с $25  до $200, а её капитализация превысила стоимость ресторанных  сетей Shake Shack, Wendy и множества других отраслевых компаний.</p>`,
+                    cards: {
+                      1: {
+                        price: `$25`,
+                        isPriceSmall: false,
+                        period: `май 2019`,
+                        isPeriodSmall: false
+                      },
+                      2: {
+                        price: `$200`,
+                        isPriceSmall: false,
+                        period: `июль 2019`,
+                        isPeriodSmall: false
+                      },
+                      3: {
+                        price: `800%`,
+                        isPriceSmall: false,
+                        period: `За 9 дней`,
+                        isPeriodSmall: false
+                      },
+                    },
+                    about: {
+                      title: `График роста компании Beyond Meat `,
+                      subtitle: `+800% прибыли за 9 дней`,
+                      isSubSmall: false,
+                      companyImgTYPE: `png`
+                    }
+                  },
+                  {
+                    title: `Акции Zoom выросли на 367% за 1.5 года`,
+                    descr: `
+                    <p>Благодаря карантину число участников видеоконференций на площадке Zoom выросло в 30 раз, а стоимость акций выросла на 367%.</p>
+                    <p>Чистая прибыль компании увеличилась в 12 раз.</p>
+                    `,
+                    cards: {
+                      1: {
+                        price: `$62`,
+                        isPriceSmall: false,
+                        period: `Апрель 2019`,
+                        isPeriodSmall: true
+                      },
+                      2: {
+                        price: `$289,68`,
+                        isPriceSmall: true,
+                        period: `Август 2020`,
+                        isPeriodSmall: true
+                      },
+                      3: {
+                        price: `367%`,
+                        isPriceSmall: false,
+                        period: `За 1.5 года`,
+                        isPeriodSmall: true
+                      },
+                    },
+                    about: {
+                      title: `График роста компании Zoom`,
+                      subtitle: `+367% прибыли за 1.5 года`,
+                      isSubSmall: false,
+                      companyImgTYPE: `png`
+                    }
+                  },
+                  {
+                    title: `154,6% доходности за 6 месяцев у Полюс золото (PLZL)`,
+                    descr: `
+                    <p>Акции Полюс золото (PLZL) выросли в 2.5 раза на фоне роста цены на золото в 2020 году, а прибыль впервые в истории компании достигла рекордного $1,1 млрд. </p>
+                    `,
+                    cards: {
+                      1: {
+                        price: `$94,02`,
+                        isPriceSmall: false,
+                        period: `Январь 2020`,
+                        isPeriodSmall: true
+                      },
+                      2: {
+                        price: `$239,38`,
+                        isPriceSmall: true,
+                        period: `Август 2020`,
+                        isPeriodSmall: true
+                      },
+                      3: {
+                        price: `154,6%`,
+                        isPriceSmall: true,
+                        period: `За 6 месяцев`,
+                        isPeriodSmall: true
+                      },
+                    },
+                    about: {
+                      title: `График роста компании PLZL`,
+                      subtitle: `За 6 месяцев акции PLZL принесли более 154,6% дохода`,
+                      isSubSmall: true,
+                      companyImgTYPE: `svg`
+                    }
+                  }
+                ]
+              each item, idx in list
+                li
+                  .body
+                    .part-descr
+                      .title!= item.title
+                      .divider
+                      .descr!= item.descr
+                      .cards
+                        each card, key in item.cards
+                          .card
+                            if card.isPriceSmall
+                              p.price.sm= card.price
+                            else
+                              p.price= card.price
+
+                            if key !== 3
+                              p.per за акцию
+                            else
+                              p.per доходность
+
+                            .divider
+
+                            if card.isPeriodSmall
+                              p.period.sm= card.period
+                            else
+                              p.period= card.period
+                    .part-graph
+                      .graph
+                        img(src=`${assets}s7-cases-graph${idx + 1}.svg` alt="" data-uk-img)
+                      .about
+                        p.title!= item.about.title
+                        if item.about.isSubSmall
+                          p.subtitle.sm!= item.about.subtitle
+                        else
+                          p.subtitle!= item.about.subtitle
+                        img(src=`${assets}s7-cases-company${idx + 1}.${item.about.companyImgTYPE}` alt="" data-uk-img)
+          +slider-dots()
+
+        h3 Аналитики из GASCapital собирают в&nbsp;ваш портфель только<br> самые высокодоходные активы с&nbsp;минимальным риском
+        .sec7__slider-companies(data-uk-slider)
+          +slider-nav()
+          .uk-slider-container
+            ul.uk-slider-items
+              -
+                var list = [
+                  {
+                    logoImg: `google-logo`,
+                    title: `Акции Google LLC`, 
+                    descr: `Доходность за 6 месяцев`,
+                    numbers: `+97,63 (11,16%)` 
+                  },
+                  {
+                    logoImg: `apple-logo`,
+                    title: `Apple Inc.`, 
+                    descr: `Доходность за 6 месяцев`,
+                    numbers: `+14,21 (9,91%)` 
+                  },
+                  {
+                    logoImg: `microsoft-logo`,
+                    title: `Microsoft Corp.`, 
+                    descr: `Доходность за 6 месяцев`,
+                    numbers: `+10,69 (15,7%)` 
+                  },
+                  {
+                    logoImg: `gasprom-logo`,
+                    title: `Газпром нефть`, 
+                    descr: `Доходность за 6 месяцев`,
+                    numbers: `+36,35 (18,37%)` 
+                  }
+                ]
+              each item, idx in list
+                li
+                  .body
+                    img.logo(src=`${assetsIco}${item.logoImg}.svg` alt="" data-uk-img)
+                    p.title= item.title
+                    .divider
+                    p.descr= item.descr
+                    p.numbers= item.numbers
+
+    .sec8.section-primary
+      .container
+        p Посмотрите впечатляющий портфель,  который мы собрали для наших инвесторов во 2 квартале 2020 года в пандемию, который принес 180% чистой прибыли всего за 3 месяца!
+        a.uk-button.btn-dark(href="#")
+          span Посмотреть портфель
+    section.sec9
+      .img-bg.ibg
+        +picture-jpg-lg(`${assets}s9-bg`, '', '', false)
+      .container
+        header 
+          h2 Мы обеспечим вам максимально комфортное<br> и эффективное сотрудничество
+        ul.sec9__items  
+          -
+            var list = [
+              {
+                title: 'Повышеная<br> доходность',
+                subtitle: 'Доход превышающий ставку любого<br> банковского депозита в несколько раз',
+                icon: iconset.profit
+              },
+              {
+                title: 'Высокая<br> ликвидность',
+                subtitle: 'Используются инструменты, которые<br> позволяют быстро выйти в кэш',
+                icon: iconset.market
+              },
+              {
+                title: 'Личный контакт',
+                subtitle: 'Знакомство с управляющим и ежедневная<br> отчётность по сделкам',
+                icon: iconset.user
+              },
+              {
+                title: 'Фиксация прибыли',
+                subtitle: 'Вывод денежных средств и только на этом<br> этапе расчёт с нами',
+                icon: iconset.secure
+              }
+            ]
+          each item, idx in list
+            li.item
+              .count= idx + 1
+              .head
+                .icon!= item.icon
+                p!= item.title
+              p.subtitle!= item.subtitle
+
+    section.sec10
+      .img-bg.ibg
+        +picture-jpg-lg(`${assets}s10-bg`, ``, '', false)
+      .container
+        header
+          h2 Безопасность средств клиента
+          h4 Ваши средства полностью защищены
+        ul.sec10__items  
+          -
+            var list = [
+              {
+                descr: 'Только инвестор может<br> вывести свои средства',
+                icon: iconset.profit
+              },
+              {
+                descr: 'Управление через<br> надежных брокеров',
+                icon: iconset.user
+              },
+              {
+                descr: 'Защита от отрицательного<br> балланса',
+                icon: iconset.star
+              },
+              {
+                descr: 'Возможность<br> страхования средств',
+                icon: iconset.ok
+              }
+            ]
+          each item in list
+            li.item
+              .icon!= item.icon
+              p!= item.descr
+
+    section.sec11 
+      .container
+        header
+          h2 6 причин почему нам доверяют инвесторы
+        .contract
+          +picture-png-lg(`${assets}s11-ipad`, `img-ipad`, iAlt)
+          a.uk-button.btn-solid(href="#")
+            span Скачать пример договора
+            != iconset.download
+        ul.accordion
+          -
+            var list = [
+              {
+                title: `Мы не берем предоплату`,
+                content: `Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.`,
+                icon: iconset.wallet
+              },
+              {
+                title: `Высокодоходный рост активов`,
+                content: `Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.`,
+                icon: iconset.market
+              },
+              {
+                title: `Личный ведущий эксперт`,
+                content: `Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.`,
+                icon: iconset.user
+              },
+              {
+                title: `Профессиональная аналитика`,
+                content: `Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.`,
+                icon: iconset.profit
+              },
+              {
+                title: `Индивидуальный подход исходя из риск профиля`,
+                content: `Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.`,
+                icon: iconset.star
+              },
+              {
+                title: `Возможность зафиксировать доходность по договору`,
+                content: `Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора. Учитывая риск профиль-инвестора - здесь прописываем про то, что учитывается любой, включая любой риск профиль инвестора.`,
+                icon: iconset.note
+              }
+            ]
+
+          each item in list
+            li
+              a.uk-accordion-title(href="#")
+                .icon!= item.icon
+                p!= item.title
+                .close
+                  svg(width="15" height="3" viewBox="0 0 15 3" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+                    path(d="M0 3V0H5.87558H9.12442H15V3H9.12442H5.87558H0Z" fill=primary)
+                  svg(width="15" height="3" viewBox="0 0 15 3" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none")
+                    path(d="M0 3V0H5.87558H9.12442H15V3H9.12442H5.87558H0Z" fill=primary)
+              .uk-accordion-content
+                p!= item.content
+
+    section.sec12
+      .img-bg.ibg
+        +picture-jpg(`${assets}s12-bg`, ``, '', false)
+      .container
+        header
+          h2 8 типов активов
+          h4 Которые откроют для вас крупнейшие мировые рынки с помощью GAS Capital
+        .tab-switcher
+          a.slidenav.slidenav-prev(href="#" data-uk-slider-item="previous")!= iconset.angleleft
+          a.slidenav.slidenav-next(href="#" data-uk-slider-item="next")!= iconset.angleright
+          .uk-slider-container
+            ul.uk-slider-items
+              -
+                var items = [
+                  "Акции",
+                  "Индексы",
+                  "ETF",
+                  "IPO",
+                  "Облигации",
+                  "Сырьевые товары",
+                  "Энерготовары",
+                  "Металлы",
+                  "ICO",
+                  "Block Chain",
+                  "Фьючерсы"
+                ]
+              each item in items
+                li
+                  a(data-text=item)= item
+        .tab-slider
+          .uk-slider-container
+            ul.uk-slider-items
+              -
+                var list = [
+                  {
+                    icon: iconset.profit,
+                    title: 'Акции',
+                    descr: `Мы зарабатываем только процент с вашей прибыли, используя различные стратегии, полностью управляя и контролируя ваш инвестиционный портфел.`,
+                  },
+                  {
+                    icon: iconset.profit,
+                    title: 'Индексы',
+                    descr: `Индексы - высоколиквидные торговые инструменты, которые отражают информацию о состоянии рынка на данный момент. `,
+                  },
+                  {
+                    icon: iconset.market,
+                    title: 'ETF',
+                    descr: `ETF состоят из нескольких активов, которые покупаются и продаются как одна акция и где в управлении находятся активы на сумму более 3 трлн долларов.`,
+                  },
+                  {
+                    icon: iconset.rocket,
+                    title: 'IPO',
+                    descr: `IPO - это инвестиции на первичном размещении акций у компаний, которые только выходят на фондовый рынок. `,
+                  },
+                  {
+                    icon: iconset.xmlid,
+                    title: 'Облигации',
+                    descr: `Покупая эти бумаги, вы даете в долг государству, а оно возвращает средства в указанный срок с процентами (купонами). Единственный риск — дефолт государства.`,
+                  },
+                  {
+                    icon: iconset.tractor,
+                    title: 'Сырьевые товары',
+                    descr: `Сырьевые товары очень востребованы в торговле и включают в себя различные виды сельскохозяйственной продукции, например, какао, кофе, кукурузу, пшеницу или сою.`,
+                  },
+                  {
+                    icon: iconset.oil,
+                    title: 'Энерготовары',
+                    descr: `Востребованными сырьевыми товарами считаются мазут, нефть, природный газ и этанол.`,
+                  },
+                  {
+                    icon: iconset.gold,
+                    title: 'Металлы',
+                    descr: `Драгоценные металлы являются важнейшими элементами финансовой системы и широко используются в торговле по всему миру.`,
+                  },
+                  {
+                    icon: iconset.note,
+                    title: 'ICO',
+                    descr: `ICO (первичное размещение токенов) — это выпуск каким-либо проектом купонов, или токенов, предназначенных для оплаты услуг площадки в будущем — в виде криптовалюты.`,
+                  },
+                  {
+                    icon: iconset.bitcoin,
+                    title: 'Block Chain',
+                    descr: `Самый популярный в мире способ покупки, хранения и использования криптовалюты.`,
+                  },
+                  {
+                    icon: iconset.market,
+                    title: 'Фьючерсы',
+                    descr: `Производный финансовый инструмент на бирже купли-продажи базового актива, при заключении которого стороны договариваются только об уровне цены и сроке поставки.`,
+                  }
+                ]
+              each item, idx in list
+                li.uk-slider-item
+                  .card
+                    .head 
+                      .icon!= item.icon
+                      p.title!= item.title
+                    .divider
+                    p.descr!= item.descr
+                    a.uk-button.btn-solid(href="#")
+                      span Узнать подробнее
+
+    section.sec13
+      .img-bg.ibg
+        +picture-jpg-lg(`${assets}s13-bg`, ``, '', false)
+      .container
+        header  
+          h2 Бесплатно составим финансовый план и собирем инвестиционный<br> портфель за 2 шага
+        ul.sec13__items
+          li
+            .icon 1
+            .body
+              .title Первичная консультация
+              .descr Обозначение целей для инвестирования, определение инструментов торговли, направление и закрепление к профильному специалисту
+          li
+            .icon 2
+            .body
+              .title Составление портфеля
+              .descr Определение активов, объёмов доходности и&nbsp;сроков, обсуждение условий торговли и закрепление условий договором
+    .sec14.section-primary
+      .container
+        p Посмотрите впечатляющий портфель,  который мы собрали для наших инвесторов во 2 квартале 2020 года в пандемию, который принес 180% чистой прибыли всего за 3 месяца!
+        a.uk-button.btn-dark(href="#")
+          span Посмотреть портфель
+    section.sec15
+      .img-bg.ibg
+        +picture-jpg-lg(`${assets}s15-bg`, ``, '', false)
+      .container
+        header 
+          h2 Осталось 4 шага для получения прибыли
+        +picture-png-lg(`${assets}s15-iphone`, `img-iphone`, `iphone`)
+        ul
+          -
+            var list = [
+              {
+                title: `Первичная консультация`,
+                descr: `Определение финансовой грамотности, обозначение целей, определение инструментов торговли, тест профиля на риск, направление к&nbsp;профильному специалисту.`
+              },
+              {
+                title: `Составление портфеля`,
+                descr: `Активов, объёмов, доходности и сроков.<br> Обсуждение условий торговли.`
+              },
+              {
+                title: `Утверждение финансового<br> инстиционного плана`,
+                descr: `Подписание договора, вход в торговые позиции.`
+              },
+              {
+                title: `Фиксация прибыли`,
+                descr: `Вывод денежных средств и только на этом этапе расчёт с нами.`
+              }
+            ]
+          each item, idx in list
+            li
+              .number= idx + 1
+              .body
+                .title!= item.title
+                .descr!= item.descr
+
+    section.sec16.section-form
+      .img-bg.ibg
+        +picture-jpg-lg(`${assets}s16-bg`, ``, '', false)
+      .container
+        header
+          h2 Оставьте заявку<br> на бесплатную консультацию
+          h4 Наши эксперты проконсультруют вас и помогут начать инвестировать
+        form.form-common(action="#")
+          .form-main
+            .form-input
+              label Введите ваше имя:
+              input.input.name(type="text" name="Имя" placeholder="Иван")
+            .form-input
+              label Введите ваш телефон:
+              input.input.phone(type="tel" name="Телефон" placeholder="+7 (999) 999-99-99")
+            button.form-submit.uk-button.btn-solid(type="submit")
+              span Получить консультацию
+          .agreement Оставляя заявку, вы даёте согласие на обработку персональных данных
+
+
+            
+
+
+                
+
+
+

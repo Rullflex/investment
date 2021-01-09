@@ -1,0 +1,36 @@
+.input {
+    display: block;
+
+    transition: $transition--normal;
+    background: transparent;
+    border: 1px solid rgba(66, 66, 66, 0.3);
+
+    color: $dark;
+    font-size: 1.125rem;
+	&.focus {}
+	&.err {
+        border: 1px solid $red !important;
+    }
+    &:focus {
+        border: 1px solid rgba(66, 66, 66, 1);
+    }
+    &:active {}
+}
+textarea.input{
+    resize:none;
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .input {
+        font-size: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+
+        &::placeholder {
+            color:rgba(255, 255, 255, 0.3);
+        }
+        &:focus {
+            border: 1px solid rgba(255, 255, 255, 1);
+        }
+    }
+}

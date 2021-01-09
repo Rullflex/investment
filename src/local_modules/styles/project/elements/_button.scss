@@ -1,0 +1,60 @@
+.uk-button {
+    transition: $transition--hover;
+    color: $dark;
+    padding: 0;
+    &:active {}
+    &:focus {}
+}
+.btn {
+    &-solid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        color: $dark;
+        font-size: 0.9375rem;
+        background: $primary;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    &-outline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 2px solid $primary;
+        color: $dark;
+        font-size: 0.9375rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        &:active {
+            background: $primary;
+            color: white;
+        }
+    }
+    &-dark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background: $dark;
+        
+        color: white;
+        font-size: 0.9375rem;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .btn {
+        &-outline {
+            &:hover {
+                background: $primary;
+                color: white;
+            }
+        }
+        &-solid {
+            font-size: 19px;
+        }
+    }
+}

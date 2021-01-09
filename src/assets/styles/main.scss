@@ -1,0 +1,33 @@
+// Предкомпилированная кухня
+
+@import "../../local_modules/styles/utils/functions";
+@import "../../local_modules/styles/utils/mixins";
+@import "../../local_modules/styles/utils/variables";
+
+// Переменные уникальные для этого окружения
+
+@import "variables";
+
+@import "../../local_modules/styles/utils/placeholders";
+
+// Настройка внешних библиотек
+
+@import "../../local_modules/styles/libraries/uikit";
+
+// Базовый нормальный стиль и общие утилиты
+
+// @import "../../local_modules/styles/core/normalize"; // normalize включен в uikit
+@import "../../local_modules/styles/core/animations";
+@import "../../local_modules/styles/core/typography";
+@import "../../local_modules/styles/core/base";
+@import "../../local_modules/styles/core/grid"; // grid включен в uikit
+@import "../../local_modules/styles/core/utilities";
+
+
+
+// Стили приложения {elements, widgets}(проверить пути)
+
+@import "./project/elements";
+@import "./project/widgets";
+@import "./project/layout";
+@import "./project/fixes";

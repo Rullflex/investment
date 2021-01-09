@@ -1,0 +1,294 @@
+#quiz {
+	padding: 0;
+	background: white;
+	.uk {
+		&-modal-body {
+			width: 18.75rem;
+			padding: 2.625rem 0;
+		}
+		&-close {
+			color: $primary;
+			right: 0;
+		}
+	}
+	.quiz {
+		&__header {
+			height: 5.5rem;
+			padding: 0.875rem 1rem 0;
+
+			background: $primary;
+
+			h2 {
+				text-align: left;
+				font-weight: 600;
+				font-size: 0.9375rem;
+
+				margin-bottom: 0.2rem;
+			}
+			h4 {
+				text-align: left;
+				font-weight: 500;
+				font-size: 0.75rem;
+				line-height: 1.45em;
+
+				margin-top: 0;
+			}
+			.quiz-final-show {
+				h2 {
+					text-align: center;
+					line-height: 1.2em;
+				}
+			}
+		}
+		&__main {
+			padding: 2rem 0.9375rem 0;
+		}
+		&__progress {
+			&-title {
+				font-weight: 600;
+				font-size: 0.9375rem;
+
+				margin-bottom: 1.125rem;
+			}
+			&-bar {
+				width: 100%;
+				height: 0.6875rem;
+
+				background: #F1F1F1;
+
+				position: relative;
+			}
+		}
+		&-progress {
+			&-bar {
+				height: 100%;
+				width: 0;
+				background: $primary;
+				transition: $transition--slow;
+			}
+		}
+		&-slide {
+			&-wrap {
+				width: 100%;
+				min-height: 21rem;
+
+				transition: $transition--fast;
+				position: relative;
+			}
+
+			width: 100%;
+			height: 100%;
+
+			transition: $transition--slow;
+			pointer-events: none;
+			visibility: hidden;
+			opacity: 0;
+
+			position: absolute;
+
+			h3 {
+				font-weight: 600;
+				font-size: 0.9375rem;
+				margin-bottom: 1.25rem;
+			}
+			&-final {
+				h3 {
+					text-align: center;
+					margin-bottom: 4px;
+				}
+				p.descr {
+					text-align: center;
+					font-size: 0.9rem;
+					line-height: 1.255em;
+
+					margin-bottom: 1rem;
+				}
+			}
+			&.quiz-active {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: initial;
+			}
+		}
+		&-radio {
+			&-wrap {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			max-width: 577px;
+			display: flex;
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
+			padding-left: 2.25rem;
+
+			font-size: 0.9375rem;
+			line-height: 1.3em;
+			color: $dark;
+			text-decoration: none;
+
+			position: relative;
+			&::before {
+				content: '';
+				display: block;
+				width: 1.4375rem;
+				height: 1.4375rem;
+
+				border: 0.3125rem solid #EDEDED;
+				border-radius: 50%;
+				background: #EDEDED;
+				transition: $transition--hover;
+
+				@include center-item-y('absolute');
+				left: 0;
+			}
+			&:hover {
+				&::before {
+					background: #fae78b;
+				}
+			}
+			&.quiz-active {
+				&::before {
+					background: $primary;
+				}	
+			}
+		}
+	}
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+	#quiz {
+		background: rgba(0,0,0,.6);
+		padding: 15px;
+		.uk {
+			&-modal-body {
+				padding: 0;
+				width: 926px;
+				height: 645px;
+			}
+		}
+		.quiz {
+			&__header {
+				height: 140px;
+				padding: 27px 131px 0;
+	
+	
+				h2 {
+					font-size: 32px;
+	
+					margin-bottom: 6px;
+				}
+				h4 {
+					font-size: 24px;
+	
+					margin-top: 0;
+				}
+				.quiz-final-show {
+					h2 {
+					}
+				}
+			}
+			&__main {
+				padding: 42px 127px;
+			}
+			&__progress {
+				&-title {
+					font-size: 18px;
+	
+					margin-bottom: 19px;
+				}
+				&-bar {
+					width: 100%;
+					height: 11px;
+	
+	
+					position: relative;
+				}
+			}
+			&-progress {
+				&-bar {
+				}
+			}
+			&-slide {
+				&-wrap {
+					height: 362px;
+	
+				}
+				&:nth-child(8) {
+					.quiz-radio-wrap {
+						flex-direction: row;
+						flex-wrap: wrap;
+					}
+					.quiz-radio {
+						width: 272px;
+					}
+				}
+				h3 {
+					font-size: 27px;
+					margin-bottom: 20px;
+					width: 690px;
+				}
+				&-final {
+					h3 {
+						text-align: center;
+						margin-bottom: 4px;
+					}
+					p.descr {
+						text-align: center;
+						font-size: 20px;
+						line-height: 1.255em;
+					}
+				}
+				&.quiz-active {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: initial;
+				}
+			}
+			&-radio {
+				&-wrap {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				max-width: 577px;
+				display: flex;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 39px;
+	
+				font-size: 18px;
+				line-height: 1.3em;
+				color: $dark;
+				text-decoration: none;
+	
+				position: relative;
+				&::before {
+					content: '';
+					display: block;
+					width: 23px;
+					height: 23px;
+	
+					border: 5px solid #EDEDED;
+					border-radius: 50%;
+					background: #EDEDED;
+					transition: $transition--hover;
+	
+					@include center-item-y('absolute');
+					left: 0;
+				}
+				&:hover {
+					&::before {
+						background: #fae78b;
+					}
+				}
+				&.quiz-active {
+					&::before {
+						background: $primary;
+					}	
+				}
+			}
+		}
+	}
+	 
+}
