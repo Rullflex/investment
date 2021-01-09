@@ -289,20 +289,54 @@
 				}
 			}
 		}
-		.form-common {
-			.form-main {
-				flex-direction: column;
-				align-items: center;
-
-			}
-
-			.form-input label {
-				color: rgba($dark, 70);
-			}
-
-			.form-submit {
-				line-height: 75px;
+		.form {
+			&-common {
 				width: 495px;
+	
+				margin-left: auto;
+				margin-right: auto;
+				.agreement {
+					font-size: 14px;
+					margin-top: 12px;
+					color: rgba($dark, 0.4);
+				}
+				.form {
+					&-main {
+						flex-direction: column;
+						align-items: center;
+					}
+					&-input {
+						width: 100%;
+
+						margin-bottom: 20px;
+						margin-right: 0;
+						label {
+							color: rgba($dark, 1);
+						}
+						.input {
+							height: 54px;
+							padding-left: 25px;
+
+							color: $dark;
+
+							border: 1px solid rgba($dark, 0.3);
+							&.name {
+								width: 100%;
+							}
+							&.phone {
+								width: 100%;
+							}
+							&::placeholder {
+								color: rgba($dark, 0.56);
+							}
+						}
+					}
+					&-submit {
+						width: 100%;
+						line-height: 75px;
+		
+					}
+				}
 			}
 		}
 	}
