@@ -1,0 +1,16 @@
+@import "../../../../local_modules/styles/project/layout/header";
+@import "../../../local_modules/styles/project/layout/footer";
+
+.sec1 {
+    padding-top: 1.25rem;
+    padding-bottom: 2.4rem;
+
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+    .sec1 {
+        padding-top: 23px;
+        padding-bottom: 60px;
+    
+    }
+}

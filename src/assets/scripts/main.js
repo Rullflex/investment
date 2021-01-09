@@ -1,25 +1,16 @@
 import 'lazysizes'
-import { App, Quiz, Form } from '../../local_modules/scripts/_core'
-import UIkit from 'uikit'
+import { App} from '../../local_modules/scripts/_core'
 
 document.addEventListener(`DOMContentLoaded`, function () {
     const app = new App()
-    const quiz = new Quiz({
-        selector: `#quiz`
-    })
-    // const form = new Form()
-    // form.init()
-
+    app.init()
+    
     app.matchMediaListener(app.lg, () => {
         
     }, () => {
 
     })
 
-    quiz.create()
-
-    document.querySelector(quiz.selector).addEventListener('hide', () => quiz.reset())
-    document.querySelector(quiz.selector).addEventListener('beforeshow', () => UIkit.dropdown(`.header .uk-navbar-dropdown`).hide(0))
 
     app.accordionSlider({
         // onSlide: () => {

@@ -64,6 +64,21 @@ header > .divider-primary {
     }
 }
 
+.page-location {
+    display: flex;
+    align-items: center;
+
+    font-size: 0.875rem;
+
+    .base-dir {
+        color: white;
+        margin-right: 2.65rem;
+    }
+    .current-dir {
+        color: $primary;
+    }
+}
+
 @media (min-width: map-get($grid-breakpoints, lg)) {
     h2 {
         text-align: center;
@@ -110,6 +125,22 @@ header > .divider-primary {
         height: 66px;
         img, svg {
             width: 12px;
+        }
+    }
+
+    .page-location {
+        .base-dir {
+            margin-right: 13px;
+        }
+        .divider {
+            width: 17px;
+            height: 1px;
+
+            background: rgba(255, 255, 255, 0.45);
+
+            margin-right: 13px;
+        }
+        .current-dir {
         }
     }
 }

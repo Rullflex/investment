@@ -11,7 +11,6 @@ class App {
             Windows: () => navigator.userAgent.match(/IEMobile/i),
             any: () => (this.isMobile.Android() || this.isMobile.BlackBerry() || this.isMobile.iOS() || this.isMobile.Opera() || this.isMobile.Windows())
         }
-        this.sliderControl = `<span class="svg-icon svg-icon--arrow-control"><svg><use xlink:href="#arrow-control"></use></svg></span>`
         
         this.md = 768
         this.lg = 1210
@@ -21,6 +20,18 @@ class App {
         if (this.isMobile.any()) {}
 
         if (!this.isMobile.any()) {}
+
+        
+        // QUIZ
+        const quiz = new Quiz({
+            selector: `#quiz`
+        })
+        
+        quiz.create()
+        // onClose
+        document.querySelector(quiz.selector).addEventListener('hide', () => quiz.currentSlide != quiz.lastIndex ?  quiz.reset() : false)
+        // onOpen
+        document.querySelector(quiz.selector).addEventListener('beforeshow', () => UIkit.dropdown(`.header .uk-navbar-dropdown`).hide(0))
     }
 
     // plural(number, ['год', 'года', 'лет'])
