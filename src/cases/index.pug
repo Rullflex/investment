@@ -18,7 +18,29 @@ block content
 
           p.case-text Акции Полюс золото (PLZL) выросли в 2.5 раза на фоне роста цены на золото в 2020 году, а прибыль впервые в истории компании достигла рекордного $1,1 млрд. Ozon провел блестящее IPO в 2020 году. Итоговая цена размещения значительно превысила первоначально определенный диапазон $22,5-27,5 за бумагу и составила $43,5.
 
-    
+        .sec1__slider(data-uk-slider)
+          a.slidenav.slidenav-prev(href="#" data-uk-slider-item="previous")!= iconset.angleleft
+          a.slidenav.slidenav-next(href="#" data-uk-slider-item="next")!= iconset.angleright
+          .uk-slider-container
+            ul.uk-slider-items
+              - for (var i = 1; i < 2; i++)
+                li.uk-slider-item
+                  .ibg
+                    +picture-jpg(`${assets}s1-i${i}`)
+
+        .sec1__final
+          h3 ИТОГИ:
+          p Акции Полюс золото (PLZL) выросли в 2.5 раза на фоне роста цены на золото в 2020 году, а прибыль впервые в истории компании достигла рекордного $1,1 млрд.
+          .numbers
+            .numbers-item
+              .numbers-top 375% #[span доходность]
+              .numbers-bottom За 5 месяцев
+            .numbers-item
+              .numbers-top 6 #[span компаний]
+              .numbers-bottom учавствовало в портфеле
+            .numbers-item
+              .numbers-top 3 #[span вида активов]
+              .numbers-bottom Золото, нефть, газ
 
 
 
