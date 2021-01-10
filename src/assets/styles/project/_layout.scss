@@ -437,30 +437,30 @@
 
     .uk {
         
-		&-switcher {
-			li {
+    &-switcher {
+      li {
 
-				width: 100%;
-				background: #F5F5F5;
-				border-left: 0.25rem solid $primary;
+        width: 100%;
+        background: #F5F5F5;
+        border-left: 0.25rem solid $primary;
 
-				padding: 1.875rem 2.625rem 2.1875rem 1.625rem;
+        padding: 1.875rem 2.625rem 2.1875rem 1.625rem;
 
 
-				.title {
-					font-weight: 500;
-					font-size: 1rem;
-					line-height: 1.2em;
+        .title {
+          font-weight: 500;
+          font-size: 1rem;
+          line-height: 1.2em;
 
-					margin-bottom: 1.4rem;
-				}
+          margin-bottom: 1.4rem;
+        }
 
-				.descr {
-					font-size: 0.875rem;
-					line-height: 1.3rem;
-				}
-			}
-		}
+        .descr {
+          font-size: 0.875rem;
+          line-height: 1.3rem;
+        }
+      }
+    }
     }
 
 }
@@ -1610,7 +1610,10 @@
 
         }
     }
-
+    
+    .tab-switcher {
+      z-index: 0;
+    }
     ///
     $inner-width: 15.6rem;
     ///
