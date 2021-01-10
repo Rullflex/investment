@@ -672,6 +672,7 @@
             }
     
             .uk-slider-item {
+                height: 854px;
                 &.active {
                     .card {
                         width: 670px;
@@ -692,7 +693,36 @@
                         }
                     }
                 }
-                height: 854px;
+                &.active, &.invisible {
+                    .card {
+                        .head {
+                            margin-bottom: 16px;
+                            .icon {
+                                img, svg {
+                                }
+                            }
+            
+                            .title {
+                                .badge {
+                                }
+                                p {
+                                }
+                            }
+                        }
+                        ul li {
+                            &:not(:last-child) {
+                            }
+                            &:first-child {
+                            }
+                            &:last-child {
+                            }
+                            .point {
+                            }
+                            .value {
+                            }
+                        }
+                    }
+                }
                 &.expanded {
                     height: 1370px;
                 }
@@ -1722,7 +1752,7 @@
                     &-container {
                         overflow: visible;
     
-                        width: unset;
+                        width: 370px;
                     }
                     &-item {
                         &:not(:last-child) {
@@ -1782,7 +1812,7 @@
                         &.active {
                             .card {
                                 pointer-events: initial;
-                                width: 349px;
+                                width: 370px;
                             }
                             .head {
                                 margin-bottom: 23px;
