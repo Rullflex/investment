@@ -421,7 +421,7 @@
             left: -261px;
         }
         .container {
-            position: static;
+            // position: static;
         }
     }
 }
@@ -590,6 +590,15 @@
             width: 0.625rem;
 
             margin-left: 1rem;
+
+        }
+        svg path{
+            transition: $transition--hover;
+        }
+        &:active {
+            svg path{
+                stroke: white;
+            }
         }
         &.active {
             img, svg {
@@ -613,7 +622,7 @@
                 overflow: hidden;
             }
             &.expanded {
-                height: 65px;
+                height: 65rem;
                 .invisible {
                     visibility: visible;
                     opacity: 1;
@@ -638,7 +647,7 @@
         }
         .btns {
             position: absolute;
-            bottom: 103px;
+            bottom: 0px;
             display: flex;
         }
         .btn-solid {
@@ -658,9 +667,14 @@
             img, svg {
                 width: unset;
             }
-        }
+            &:hover {
+                svg path{
+                    stroke: white;
+                }
+            }
+        } 
         .container {
-            position: static;
+            // position: static;
         }
         .accordion-slider {
             .descr {
@@ -668,9 +682,24 @@
                 font-size: 16px;
                 line-height: 1.5em;
     
-                margin-bottom: 1rem;
+                position: absolute;
+                top: 110px;
             }
-    
+            .card {
+                .head {
+                    margin-bottom: 100px;
+                }
+                .title {
+                    .badge {
+                        line-height: 16px;
+                    }
+                }
+                ul li {
+                    &:first-child {
+                        border-top: 1px solid rgba(41, 41, 41, 0);
+                    }
+                }
+            }
             .uk-slider-item {
                 height: 854px;
                 &.active {
@@ -689,14 +718,15 @@
                     }
                     ul li {
                         .point {
-                            // font-weight: normal;
+                            font-weight: normal;
+                            font-size: 19px;
                         }
                     }
                 }
                 &.active, &.invisible {
                     .card {
                         .head {
-                            margin-bottom: 16px;
+                            margin-bottom: 92px;
                             .icon {
                                 img, svg {
                                 }
@@ -726,6 +756,7 @@
                 &.expanded {
                     height: 1370px;
                 }
+
             }
             .uk {
                 &-slider-container {

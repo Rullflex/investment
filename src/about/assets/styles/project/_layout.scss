@@ -1,5 +1,5 @@
 @import "../../../../local_modules/styles/project/layout/header";
-@import "../../../local_modules/styles/project/layout/footer";
+@import "../../../../local_modules/styles/project/layout/footer";
 @import "../../../../local_modules/styles/project/layout/section-form";
 
 .sec1 {
@@ -392,6 +392,9 @@
         
         .tab-switcher {
             display: flex;
+            .uk-slider-container {
+                width: unset;
+            }
         }
         .uk {
             &-slider-items {

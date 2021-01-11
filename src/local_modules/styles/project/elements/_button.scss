@@ -16,6 +16,13 @@
         background: $primary;
         text-transform: uppercase;
         font-weight: 500;
+        &:active {
+            background: link-hover($primary);
+            color: $dark;
+        }
+        &:hover {
+            color: $dark;
+        }
     }
     &-outline {
         display: flex;
@@ -43,6 +50,13 @@
         font-size: 0.9375rem;
         text-transform: uppercase;
         font-weight: 500;
+
+        &:active {
+            background: link-hover($dark);
+        }
+        &:hover {
+            color: white;
+        }
     }
 }
 @media (min-width: map-get($grid-breakpoints, lg)) {
@@ -55,6 +69,14 @@
         }
         &-solid {
             font-size: 19px;
+            &:hover {
+                background: link-hover($primary);
+            }
+        }
+        &-dark {
+            &:hover {
+                background: link-hover($dark);
+            }
         }
     }
 }

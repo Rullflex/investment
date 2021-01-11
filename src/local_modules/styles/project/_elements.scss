@@ -59,8 +59,13 @@ header > .divider-primary {
     justify-content: center;
     align-items: center;
     z-index: 11;
+    transition: $transition--hover;
     img, svg {
         width: 0.375rem;
+    }
+    &:active {
+        background: darken($primary, 10%)  ;
+        color: $dark;
     }
 }
 
@@ -125,6 +130,10 @@ header > .divider-primary {
         height: 66px;
         img, svg {
             width: 12px;
+        }
+        &:hover {
+            background: darken($primary, 10%)  ;
+            color: $dark;
         }
     }
 
