@@ -91,15 +91,17 @@
         .quiz-slide.quiz-slide-final
           h3 Оставьте ваши контакты
           p.descr Менеджер отправит Вам результат теста WhatsApp в ближайшее время 
-          form.form-common(action="#")
+          form#common.form-common(action="#")
             .values
             .form-main
               .form-input
                 label Введите ваше имя:
                 input.input.name(type="text" name="Имя" placeholder="Иван")
+                .messages
               .form-input
                 label Введите ваш телефон c WhatsApp:
                 input.input.phone(type="tel" name="Телефон" placeholder="+7 (999) 999-99-99")
+                .messages
               button.form-submit.uk-button.btn-solid(type="submit")
                 span Узнать результаты теста
             .agreement Оставляя заявку, вы даёте согласие на обработку персональных данных
