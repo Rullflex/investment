@@ -1,3 +1,6 @@
+script(src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js')
+
 #quiz.uk-flex-top(data-uk-modal)
   .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
     button.uk-modal-close-default(type="button" data-uk-close)
@@ -91,17 +94,15 @@
         .quiz-slide.quiz-slide-final
           h3 Оставьте ваши контакты
           p.descr Менеджер отправит Вам результат теста WhatsApp в ближайшее время 
-          form#common.form-common(action="#")
+          form.form-common(action="#")
             .values
             .form-main
               .form-input
                 label Введите ваше имя:
                 input.input.name(type="text" name="Имя" placeholder="Иван")
-                .messages
               .form-input
                 label Введите ваш телефон c WhatsApp:
                 input.input.phone(type="tel" name="Телефон" placeholder="+7 (999) 999-99-99")
-                .messages
               button.form-submit.uk-button.btn-solid(type="submit")
                 span Узнать результаты теста
             .agreement Оставляя заявку, вы даёте согласие на обработку персональных данных
